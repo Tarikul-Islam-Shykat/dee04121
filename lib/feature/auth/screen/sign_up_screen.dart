@@ -26,10 +26,6 @@ class SignUpScreen extends StatelessWidget {
         child: SafeArea(
           child: Column(
             children: [
-              // Top section with back button and logo
-              //   _buildTopSection(controller),
-
-              // Expanded content area
               Expanded(
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 24.w),
@@ -136,55 +132,53 @@ class SignUpScreen extends StatelessWidget {
   }
 
   Widget _buildNameField(SignupController controller) {
-    return Obx(
-      () => Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12.r),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.1),
-              blurRadius: 10,
-              offset: const Offset(0, 2),
-            ),
-          ],
-        ),
-        child: TextField(
-          controller: controller.nameController,
-          keyboardType: TextInputType.text,
-          style: TextStyle(
-            fontSize: 16.sp,
-            color: Colors.black87,
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12.r),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            blurRadius: 10,
+            offset: const Offset(0, 2),
           ),
-          decoration: InputDecoration(
-            hintText: 'Enter Full Name Here',
-            hintStyle: TextStyle(
-              color: Colors.grey[400],
-              fontSize: 16.sp,
+        ],
+      ),
+      child: TextField(
+        controller: controller.nameController,
+        keyboardType: TextInputType.text,
+        style: TextStyle(
+          fontSize: 16.sp,
+          color: Colors.black87,
+        ),
+        decoration: InputDecoration(
+          hintText: 'Enter Full Name Here',
+          hintStyle: TextStyle(
+            color: Colors.grey[400],
+            fontSize: 16.sp,
+          ),
+          filled: true,
+          fillColor: Colors.white,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12.r),
+            borderSide: BorderSide.none,
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12.r),
+            borderSide: BorderSide(
+              color: Colors.red,
+              width: 1.5,
             ),
-            filled: true,
-            fillColor: Colors.white,
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12.r),
-              borderSide: BorderSide.none,
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12.r),
+            borderSide: BorderSide(
+              color: Colors.red,
+              width: 2,
             ),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12.r),
-              borderSide: BorderSide(
-                color: Colors.red,
-                width: 1.5,
-              ),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12.r),
-              borderSide: BorderSide(
-                color: Colors.red,
-                width: 2,
-              ),
-            ),
-            contentPadding: EdgeInsets.symmetric(
-              horizontal: 20.w,
-              vertical: 16.h,
-            ),
+          ),
+          contentPadding: EdgeInsets.symmetric(
+            horizontal: 20.w,
+            vertical: 16.h,
           ),
         ),
       ),

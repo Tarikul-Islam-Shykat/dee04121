@@ -5,6 +5,7 @@ import 'package:prettyrini/core/const/image_path.dart';
 import 'package:prettyrini/core/global_widegts/custom_text.dart';
 import 'package:prettyrini/feature/auth/controller/forget_pasword_controller.dart';
 import 'package:prettyrini/feature/auth/controller/login_controller.dart';
+import 'package:prettyrini/feature/auth/screen/otp_very_screen.dart';
 
 class ForgetPaswordScreen extends StatelessWidget {
   const ForgetPaswordScreen({super.key});
@@ -197,7 +198,9 @@ class ForgetPaswordScreen extends StatelessWidget {
           color: Colors.transparent,
           borderRadius: BorderRadius.circular(12.r),
           child: InkWell(
-            onTap: controller.isLoading.value ? null : controller.login,
+            onTap: () {
+              Get.to(() => OtpVerificationPage());
+            },
             borderRadius: BorderRadius.circular(12.r),
             splashColor: Colors.white.withOpacity(0.3),
             highlightColor: Colors.white.withOpacity(0.1),

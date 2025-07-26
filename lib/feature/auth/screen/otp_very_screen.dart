@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:prettyrini/core/const/image_path.dart';
 import 'package:prettyrini/core/global_widegts/custom_text.dart';
 import 'package:prettyrini/feature/auth/controller/otp_verification_controller.dart';
+import 'package:prettyrini/feature/auth/screen/reset_password.dart';
 
 class OtpVerificationPage extends StatelessWidget {
   const OtpVerificationPage({super.key});
@@ -231,9 +232,12 @@ class OtpVerificationPage extends StatelessWidget {
           color: Colors.transparent,
           borderRadius: BorderRadius.circular(12.r),
           child: InkWell(
-            onTap: controller.isLoading.value || !controller.isOtpComplete.value
-                ? null
-                : controller.verifyOtp,
+            onTap: () {
+              Get.to(() => ResetPassword());
+            },
+            // controller.isLoading.value || !controller.isOtpComplete.value
+            //     ? null
+            //     : controller.verifyOtp,
             borderRadius: BorderRadius.circular(12.r),
             splashColor: Colors.white.withOpacity(0.3),
             highlightColor: Colors.white.withOpacity(0.1),

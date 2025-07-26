@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:prettyrini/core/const/image_path.dart';
 import 'package:prettyrini/feature/auth/controller/login_controller.dart';
+import 'package:prettyrini/feature/bottom_nav/ui/bottom_nav_screen.dart';
+import 'package:prettyrini/feature/bottom_nav/widget/custom_bottom_nav.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -24,10 +26,8 @@ class LoginPage extends StatelessWidget {
         child: SafeArea(
           child: Column(
             children: [
-              // Top section with back button and logo
               //   _buildTopSection(controller),
 
-              // Expanded content area
               Expanded(
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 24.w),
@@ -305,14 +305,14 @@ class LoginPage extends StatelessWidget {
     return Text.rich(
       TextSpan(
         style: TextStyle(
-          fontSize: 12.sp,
-          color: Colors.white.withOpacity(0.8),
+          fontSize: 14.sp,
+          color: Colors.white,
           height: 1.4,
         ),
         children: [
           const TextSpan(
               text:
-                  'By continuing, you confirm that you are 6 years or older\nand agree to our '),
+                  'By continuing, you confirm that you are 6 years or older and agree to our '),
           TextSpan(
             text: 'Terms & Conditions',
             style: TextStyle(
@@ -356,7 +356,10 @@ class LoginPage extends StatelessWidget {
           color: Colors.transparent,
           borderRadius: BorderRadius.circular(12.r),
           child: InkWell(
-            onTap: controller.isLoading.value ? null : controller.login,
+            onTap: () {
+              Get.to(() => BottomNavScreen());
+            },
+            //controller.isLoading.value ? null : controller.login,
             borderRadius: BorderRadius.circular(12.r),
             splashColor: Colors.white.withOpacity(0.3),
             highlightColor: Colors.white.withOpacity(0.1),

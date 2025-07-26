@@ -311,8 +311,7 @@ class ResetPassword extends StatelessWidget {
                           strokeWidth: 2,
                         ),
                       )
-                    : normalText(
-                        text: "Send Email", fontWeight: FontWeight.bold),
+                    : normalText(text: "Confirm", fontWeight: FontWeight.bold),
               ),
             ),
           ),
